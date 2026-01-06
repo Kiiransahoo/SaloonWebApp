@@ -1,0 +1,25 @@
+﻿@page
+@model SaloonApp.Pages.Search.SearchModel
+
+    <h2>Search Salons</h2>
+
+    <form method="post">
+        <input asp-for="PinCode" placeholder="Enter PIN" class="form-control" />
+        <button class="btn btn-success mt-2">Search</button>
+    </form>
+
+    @if (Model.Salons != null)
+    {
+        <h3>Results</h3>
+        <ul>
+            @foreach (var s in Model.Salons)
+            {
+                <li>
+                    <strong>@s.Name</strong><br />
+                    @s.Address<br />
+                    Phone: @s.Phone
+                </li>
+            }
+        </ul>
+    }
+

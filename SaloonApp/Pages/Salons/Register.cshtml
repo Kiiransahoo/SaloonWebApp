@@ -1,0 +1,55 @@
+﻿@page
+@model SaloonApp.Pages.Salons.RegisterModel
+
+<div class="container mt-4">
+
+    <h3 class="mb-3">Register Your Salon</h3>
+
+    <form method="post">
+
+        <div class="mb-3">
+            <label class="form-label">Store Name</label>
+            <input asp-for="Salon.Name" class="form-control" />
+            <span asp-validation-for="Salon.Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Salon Type</label>
+            <select asp-for="Salon.SalonType" class="form-control">
+                <option value="">-- Select Type --</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Unisex</option>
+            </select>
+            <span asp-validation-for="Salon.SalonType" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Contact No</label>
+            <input asp-for="Salon.Phone" class="form-control" />
+            <span asp-validation-for="Salon.Phone" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Address</label>
+            <textarea asp-for="Salon.Address" class="form-control"></textarea>
+            <span asp-validation-for="Salon.Address" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">PIN Code</label>
+            <input asp-for="Salon.PinCode" class="form-control" />
+            <span asp-validation-for="Salon.PinCode" class="text-danger"></span>
+        </div>
+
+        <button class="btn btn-primary w-100">Register Salon</button>
+
+    </form>
+
+    <p class="text-success mt-2">@Model.Message</p>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
