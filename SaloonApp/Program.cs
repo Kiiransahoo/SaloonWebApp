@@ -20,7 +20,6 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 builder.Services.AddAuthorization();
 
-// Require login for everything except Login page
 builder.Services.AddRazorPages(options =>
 {
     options.Conventions.AuthorizeFolder("/");
